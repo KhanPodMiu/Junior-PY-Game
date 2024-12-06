@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký môn thi tốt nghiệp</title>
+    <link rel="stylesheet" href="web.css" />
+  </head>
+  <body>
+    <h1>Đăng ký môn thi tốt nghiệp</h1>
+    <form action="register">
+      <label for="name">Họ và Tên</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Nhập họ và tên"
+        required
+      />
+      <label for="cccd">CCCD</label>
+      <input
+        type="number"
+        id="cccd"
+        name="cccd"
+        placeholder="Nhập CCCD"
+        required
+      />
+      <label for="dob">Ngày Sinh</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label>Giới tính</label>
+      <div class="gender-options">
+        <input type="radio" id="male" name="gender" value="Nam" required />
+        <label for="male">Nam</label>
+
+        <input type="radio" id="female" name="gender" value="Nữ" required />
+        <label for="female">Nữ</label>
+      </div>
+
+      <label>Môn thi</label>
+      <div class="subject-options">
+        <input type="checkbox" id="toan" name="subjects" value="Toán" />
+        <label for="toan">Toán</label>
+
+        <input type="checkbox" id="ngu-van" name="subjects" value="Ngữ Văn" />
+        <label for="ngu-van">Ngữ Văn</label>
+
+        <input
+          type="checkbox"
+          id="ngoai-ngu"
+          name="subjects"
+          value="Ngoại Ngữ"
+        />
+        <label for="ngoai-ngu">Ngoại Ngữ</label>
+      </div>
+
+      <label for="combination">Tổ hợp</label>
+      <select id="combination" name="combination" required>
+        <option value="" disabled selected>Chọn tổ hợp</option>
+        <option value="Khoa học Tự nhiên">Khoa học Tự nhiên</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+
+      <input type="submit" class="submit-button" value="Gửi Thông Tin" />
+    </form>
+  </body>
+</html>

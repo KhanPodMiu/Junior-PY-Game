@@ -18,9 +18,6 @@ nguoi_choi_la_2 = random.choice(la_bai)
 print(nguoi_choi_la_1)
 print(nguoi_choi_la_2)
 #rut lan thu 1
-
-
-
 rut_lan_1 = input("Ban co muon rut:")
 if rut_lan_1 == 'n':
     print("Tong cua ban:", nguoi_choi_la_1+nguoi_choi_la_2)
