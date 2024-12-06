@@ -1,14 +1,14 @@
 import random 
 la_bai = [1,2,3,4,5,6,7,8,9,10]
 
+
+print("Chao Mung Ban Den Voi Game Bai Cao")
+
 print("May:")
 may_la_1 = random.choice(la_bai)
 may_la_2 = random.choice(la_bai)
 print(may_la_1,end="")
 print("?")
-
-
-
 
 
 #nguoi choi
