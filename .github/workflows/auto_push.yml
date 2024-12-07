@@ -5,6 +5,9 @@ on:
     - cron: '0 8 * * *' # Lên lịch chạy mỗi ngày vào lúc 8 giờ sáng
   workflow_dispatch: # Cho phép bạn chạy script thủ công từ GitHub Actions UI
 
+permissions:
+  contents: write  # Cấp quyền ghi vào repository
+
 jobs:
   commit_and_push:
     runs-on: ubuntu-latest
@@ -27,6 +30,6 @@ jobs:
       run: |
         git commit -m "Auto commit by GitHub Actions $(date '+%Y-%m-%d %H:%M:%S')"
 
-    - name: Push changes with token
+    - name: Push changes
       run: |
-        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/KhanPodMiu/Junior-PY-Game.git
+        git push
