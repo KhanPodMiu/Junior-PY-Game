@@ -1,0 +1,32 @@
+name: Auto Commit and Push
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Lên lịch chạy mỗi ngày vào lúc 8 giờ sáng
+  workflow_dispatch: # Cho phép bạn chạy script thủ công từ GitHub Actions UI
+
+jobs:
+  commit_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@users.noreply.github.com"
+
+    - name: Make changes (simulate with a log file)
+      run: |
+        echo "Update at $(date)" >> log.txt
+        git add log.txt
+
+    - name: Commit changes
+      run: |
+        git commit -m "Auto commit by GitHub Actions $(date '+%Y-%m-%d %H:%M:%S')"
+
+    - name: Push changes
+      run: |
+        git push origin main
