@@ -27,6 +27,6 @@ jobs:
       run: |
         git commit -m "Auto commit by GitHub Actions $(date '+%Y-%m-%d %H:%M:%S')"
 
-    - name: Push changes
+    - name: Push changes with token
       run: |
-        git push origin main
+        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/KhanPodMiu/Junior-PY-Game.git
