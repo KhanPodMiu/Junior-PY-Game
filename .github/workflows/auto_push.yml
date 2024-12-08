@@ -2,7 +2,9 @@ name: Auto Commit and Push
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Lên lịch chạy mỗi ngày vào lúc 8 giờ sáng
+    - cron: '0 8 * * *'   # Lần 1: 8 giờ sáng
+    - cron: '0 14 * * *'  # Lần 2: 2 giờ chiều
+    - cron: '0 20 * * *'  # Lần 3: 8 giờ tối
   workflow_dispatch: # Cho phép bạn chạy script thủ công từ GitHub Actions UI
 
 permissions:
