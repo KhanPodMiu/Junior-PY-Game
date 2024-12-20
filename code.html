@@ -3,73 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
+    <title>Template</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
         margin: 0;
         padding: 0;
-        background-color: #ffffff;
+        background-color: #f4f4f4;
         color: #333;
       }
-      header {
+
+      .header {
+        background: #333;
+        color: #fff;
         text-align: center;
-        padding: 50px 20px;
-        background-color: #f9f9f9;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
       }
-      header h1 {
-        margin: 0;
-        font-size: 2.5rem;
+
+      .menu {
+        background: #444;
+        padding: 10px;
       }
-      header p {
-        font-size: 1.2rem;
-        color: #666;
+
+      .menu ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
       }
-      .links {
-        margin: 20px 0;
+
+      .menu ul li {
+        margin: 15px;
       }
-      .links a {
-        margin: 0 15px;
+
+      .menu ul li a {
         text-decoration: none;
-        font-size: 1rem;
-        color: #0073aa;
+        color: #fff;
+        font-weight: bold;
       }
-      .about {
-        padding: 40px 20px;
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.8;
-        font-size: 1rem;
+
+      .main {
+        padding: 20px;
       }
-      .about img {
-        max-width: 150px;
-        border-radius: 50%;
-        margin: 20px auto;
-        display: block;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      .section {
+        background: #fff;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+
+      .section h2 {
+        margin-top: 0;
+      }
+
+      ul,
+      ol {
+        padding-left: 20px;
+      }
+
+      ul li,
+      ol li {
+        margin-bottom: 5px;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+
+      table th {
+        background: #333;
+        color: #fff;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Mua Xuan Tan Tru</h1>
-      <p>A little corner for me</p>
-      <div class="links">
-        <a href="#home">Trang chủ</a>
-        <a href="#explore">Khám phá</a>
-        <a href="#contact">Liên hệ</a>
+    <div class="header">
+      <h1>Mùa Xuân Tân Trụ</h1>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="#link-home">Trang chủ</a></li>
+        <li><a href="#link-introduce">Giới thiệu</a></li>
+        <li><a href="#link-contact">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div id="list" class="section">
+        <h2>Thông tin</h2>
+        <ul>
+          <li>Tân trụ 1</li>
+          <li>Tân trụ 2</li>
+          <li>Tân trụ 3</li>
+        </ul>
+        <ol>
+          <li>Tân trụ 1</li>
+          <li>Tân trụ 1</li>
+          <li>Tân trụ 1</li>
+        </ol>
       </div>
-    </header>
-    <section class="about" id="about">
-      <img src="https://via.placeholder.com/150" alt="My Portrait" />
-      <h2>About Me</h2>
-      <p>
-        Huyện Tân Trụ thuộc vùng châu thổ Đồng bằng sông Cửu Long kẹp giữa hai
-        con sông Vàm Cỏ Đông và Vàm Cỏ Tây. Huyện có vị trí địa lý thuận lợi do
-        nằm gần thành phố Tân An và Thành phố Hồ Chí Minh nên có nhiều tiềm năng
-        để phát triển kinh tế xã hội, du lịch sinh thái gắn với di tích lịch sử.
-      </p>
-    </section>
+
+      <div id="table" class="section">
+        <h2>Bảng</h2>
+        <table>
+          <tr>
+            <th>Hàng 1 Cột 1</th>
+            <th>Hàng 1 Cột 2</th>
+          </tr>
+
+          <tr>
+            <td>Tân trụ 1</td>
+            <td>Tân trụ 1</td>
+          </tr>
+          <tr>
+            <td>Tân trụ 1</td>
+            <td>Tân trụ 1</td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="media" class="section">
+        <h2>Ảnh & Video</h2>
+        <img src="/Users/voann/Desktop/Memory/hcmusbackhoa.png" />
+        <video controls>
+          <source src="/Users/voann/Desktop/Memory/0531.mov" type="video/mp4" />
+        </video>
+      </div>
+    </div>
   </body>
 </html>
