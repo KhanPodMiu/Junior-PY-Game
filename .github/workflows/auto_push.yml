@@ -5,10 +5,10 @@ on:
     - cron: '0 8 * * *'   # Lần 1: 8 giờ sáng
     - cron: '0 14 * * *'  # Lần 2: 2 giờ chiều
     - cron: '0 20 * * *'  # Lần 3: 8 giờ tối
-  workflow_dispatch: # Cho phép bạn chạy script thủ công từ GitHub Actions UI
+  workflow_dispatch:
 
 permissions:
-  contents: write  # Cấp quyền ghi vào repository
+  contents: write
 
 jobs:
   commit_and_push:
@@ -23,14 +23,18 @@ jobs:
         git config user.name "KhanPodMiu"
         git config user.email "miupod.3006@gmail.com"
 
-    - name: Make changes (simulate with a log file)
+    - name: Random number of commits
       run: |
-        echo "Update at $(date)" >> log.txt
-        git add log.txt
+        COMMITS=$(( (RANDOM % 4) + 1 ))  # Tạo 1 đến 4 commit mỗi lần chạy
+        echo "Generating $COMMITS commits..."
 
-    - name: Commit changes
-      run: |
-        git commit -m "Auto commit by GitHub Actions $(date '+%Y-%m-%d %H:%M:%S')"
+        for i in $(seq 1 $COMMITS)
+        do
+          echo "Update #$i at $(date)" >> log.txt
+          git add log.txt
+          git commit -m "Auto commit #$i by GitHub Actions on $(date '+%Y-%m-%d %H:%M:%S')"
+          sleep 1  # Delay nhỏ để tránh commit trùng timestamp
+        done
 
     - name: Push changes
       env:
