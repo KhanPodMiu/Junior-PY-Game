@@ -2,9 +2,9 @@ name: Auto Commit and Push
 
 on:
   schedule:
-    - cron: '0 8 * * *'   # Lần 1: 8 giờ sáng
-    - cron: '0 14 * * *'  # Lần 2: 2 giờ chiều
-    - cron: '0 20 * * *'  # Lần 3: 8 giờ tối
+    - cron: '0 8 * * *'   # 8h sáng
+    - cron: '0 14 * * *'  # 2h chiều
+    - cron: '0 20 * * *'  # 8h tối
   workflow_dispatch:
 
 permissions:
@@ -25,15 +25,14 @@ jobs:
 
     - name: Random number of commits
       run: |
-        COMMITS=$(( (RANDOM % 4) + 1 ))  # Tạo 1 đến 4 commit mỗi lần chạy
+        COMMITS=$(( (RANDOM % 50) + 1 ))  # 1 đến 50 commit
         echo "Generating $COMMITS commits..."
-
         for i in $(seq 1 $COMMITS)
         do
           echo "Update #$i at $(date)" >> log.txt
           git add log.txt
           git commit -m "Auto commit #$i by GitHub Actions on $(date '+%Y-%m-%d %H:%M:%S')"
-          sleep 1  # Delay nhỏ để tránh commit trùng timestamp
+          sleep 1
         done
 
     - name: Push changes
